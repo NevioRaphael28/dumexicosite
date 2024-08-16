@@ -3,94 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante DuMexico</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Restaurante Dumexico</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Restaurante Du Mexico</h1>
+            <h1>Restaurante DuMexico</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Sobre Nós</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#recipes">Receitas</a></li>
+                    <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-    <section id="Menu">
-        <div class="container">
-            <h2>Nosso Menu</h2>
-            <div class="menu-item">
-                <h3>Tacos</h3>
-                <p>Tacos deliciosos, feitos com ingredientes de primeira qualidade.</p>
-            </div>
-            <div class="menu-item">
-                <h3>Burritos</h3>
-                <p>teste teste teste</p>
-            </div>
-            <div class="menu-item">
-                <h3>Guacamole</h3>
-                <p>teste teste teste</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery">
-        <div class="container">
-            <h2>Galeria</h2>
-            <div class="gallery-grid">
-                <img src="./img/tacos.mexicanos.jpg" alt="Prato 1">
-                <img src="./img/burrito.jpg" alt="Prato 2">
-                <img src="./img/ambiente1.jpg" alt="Ambiente 1">
-                <img src="./img/mexicano-1.jpg" alt="Ambiente 2">
-            </div>
-        </div>
-    </section>
     
+    <main>
+        <section id="menu">
+            <div class="container">
+                <h2>Menu</h2>
+                <div class="dish">
+                    <img src="./IMG/tacos.jpg" alt="Tacos">
+                    <h3>Tacos</h3>
+                    <p>Deliciosos tacos com carne e vegetais frescos.</p>
+                </div>
+                <div class="dish">
+                    <img src="./IMG/burritos.jpg" alt="Burritos">
+                    <h3>Burritos</h3>
+                    <p>Enrolados com recheio de feijão, arroz e carne.</p>
+                </div>
+                <div class="dish">
+                    <img src="./IMG/quesadilla-mexicano.jpg" alt="Quesadillas">
+                    <h3>Quesadillas</h3>
+                    <p>Quesadillas deliciosas acompanhadas com tortilas crocantes.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="about">
-        <div class="container">
-            <h2>Sobre Nós!</h2>
-            <p>O Restaurante Du Mexico é um restaurante mexicano...</p>
-        </div>  
-    </section>
+        <section id="recipes">
+            <div class="container">
+                <h2>Receitas</h2>
+                <button id="showRecipes">Mostrar Receitas</button>
+                <div id="recipesList" style="display: none;">
+                    <div class="recipe">
+                        <h3>Receita de Tacos</h3>
+                        <p>Ingredientes: Tortilhas, carne, alface, tomate, cebola, temperos.</p>
+                    </div>
+                    <div class="recipe">
+                        <h3>Receita de Burritos</h3>
+                        <p>Ingredientes: Tortilhas, feijão, arroz, carne, queijo, molho.</p>
+                    </div>
+                    <div class="recipe">
+                        <h3>Receita de Quesadillas</h3>
+                        <p>Ingredientes: Tortilhas, queijo, opcional: frango ou carne.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="reservation">
-        <div class="container">
-            <h2>Faça Sua Reserva</h2>
-            <form id="reservationForm">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="telefone">Telefone:</label>
-                <input type="text" id="telefone" name="telefone" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <button type="submit">Enviar Contato</button>
-            </form>
-            <p id="formMessage"></p>
-        </div>
-    </section>
-    
-
-    <section id="contact">
-        <div class="container">
-            <h2>Endereço</h2>
-            <p>Endereço: Rua das Margaridas, 1234, São Paulo - SP</p>
-            <p>Email: contato@restauranteguacca.com.br</p>
-            <p>Telefone: (11) 1234-5678</p>
-            <P>WhatsApp: (11) 91234-5678</P>
-        </div>
-    </section>
+        <section id="contact">
+            <div class="container">
+                <h2>Contato</h2>
+                <form id="contactForm">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit">Enviar</button>
+                </form>
+                <p id="formMessage" style="display: none;"></p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Restaurante DuMexico. Todos os Direitos Reservados.</p>
+            <p>&copy; 2024 DuMexico. Todos os direitos reservados.</p>
         </div>
     </footer>
 
