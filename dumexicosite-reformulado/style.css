@@ -1,0 +1,586 @@
+/* Reset básico para margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #000000;
+    background-color: hsl(0, 100%, 31%);
+    padding-bottom: 60px;
+    background-image: url('./img/fundo1.png');
+    background-size: cover; /* Faz a imagem cobrir toda a área visível */
+    background-position: center; /* Centraliza a imagem */
+    background-size: 900px 562px; /* Define a largura e altura em pixels */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    padding: 0 20px; /* Padding lateral */
+}
+
+/* Header */
+header {
+    background: #007506;
+    color: #ffffff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente o conteúdo do header */
+    align-items: center;     /* Alinha verticalmente o conteúdo do header */
+    text-align: center;      /* Alinha o texto no centro */
+    margin: 0; /* Remove margens do h1 */
+    gap: 20px;
+}
+
+/* Estilo para o nome do restaurante */
+.restaurant-name {
+    font-family: 'Lobster', cursive; /* Fonte estilizada, você pode substituir por outra fonte de sua preferência */
+    font-size: 2.5em; /* Tamanho da fonte */
+    color: #ffffff; /* Cor vibrante, você pode ajustar conforme sua preferência */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Efeito de sombra para dar profundidade */
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+    font-weight: bold; /* Negrito para maior impacto */
+    margin: 0; /* Remover margens para centralização precisa */
+    padding: 0; /* Remover padding para centralização precisa */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    display: flex;
+    align-items: center; /* Alinha verticalmente a logo e o texto ao centro */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente dentro do <h1> */
+}
+
+.logo img {
+    height: 100px; /* Define a altura da logo; ajuste conforme necessário */
+    width: auto;  /* Mantém a proporção da logo */
+    margin-right: 10px; /* Espaço entre a logo e o nome do restaurante */
+    margin-left: 20px;
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Aumenta o zoom do logo ao passar o mouse */
+}
+
+.container2 {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transições suaves */
+}
+
+nav {
+    margin-top: 20px; /* Espaçamento acima do menu de navegação */
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave */
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    transform: scale(1.1); /* Efeito de zoom */
+}
+
+/* Seções */
+section {
+    padding: 20px 0;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* Inicialmente escondido */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.fullscreen-menu.active {
+    display: block;
+}
+
+.fullscreen-menu .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0, 100%, 31%);
+    background-image: url('./img/fundo1.png');
+    background-size: cover; /* Faz a imagem cobrir toda a área visível */
+    background-position: center; /* Centraliza a imagem */
+    background-size: 900px 562px; /* Define a largura e altura em pixels */
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* Inicialmente escondido */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.fullscreen-menu.active {
+    display: block;
+}
+
+.fullscreen-menu .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-title {
+    font-size: 36px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    color: #fff; /* Cor de destaque */
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    position: relative; /* Necessário para o pseudo-elemento */
+}
+
+.menu-title::after {
+    content: ''; /* Cria um pseudo-elemento vazio */
+    display: block; /* Exibe o pseudo-elemento como bloco */
+    width: 60px; /* Largura da linha */
+    height: 4px; /* Altura da linha */
+    background-color: #ffffff; /* Cor da linha */
+    margin: 10px auto; /* Espaçamento superior e centraliza a linha */
+    border-radius: 2px; /* Borda arredondada da linha */
+}
+
+.menu-item {
+    background: #fff;
+    padding: 20px; /* Aumenta o padding para mais espaçamento interno */
+    margin-bottom: 20px; /* Aumenta o espaçamento entre os itens */
+    border-radius: 10px; /* Bordas arredondadas para um visual mais suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para criar profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); /* Eleva o item ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Intensifica a sombra ao passar o mouse */
+}
+
+.menu-item h3 {
+    font-size: 1.5em; /* Aumenta o tamanho da fonte para o título do item */
+    color: #333; /* Define uma cor de texto escura e contrastante */
+    margin-bottom: 10px; /* Adiciona um espaçamento abaixo do título */
+}
+
+.menu-item p {
+    font-size: 1.2em; /* Ajusta o tamanho da fonte do texto do item */
+    color: #666; /* Define uma cor de texto mais clara para o corpo do texto */
+    line-height: 1.6; /* Aumenta a altura da linha para melhorar a legibilidade */
+}
+
+.cardapio {
+    display: flex; /* Configura o layout para usar flexbox */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
+}
+
+.cardapio img {
+    width: 150px; /* Define a largura da imagem */
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+    border-radius: 10px; /* Arredonda as bordas da imagem */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra sutil à imagem */
+}
+
+.item-content {
+    flex: 1; /* Permite que o conteúdo ocupe o restante do espaço disponível */
+}
+
+.item-content h3 {
+    font-size: 1.4em; /* Ajusta o tamanho da fonte para o título do item */
+    margin-bottom: 10px; /* Adiciona espaçamento abaixo do título */
+    color: #333; /* Cor do título */
+}
+
+.item-content p {
+    font-size: 1.1em; /* Ajusta o tamanho da fonte do texto do item */
+    color: #555; /* Cor do texto */
+}
+
+#gallery {
+    background: #f9f9f9; /* Uma cor de fundo clara para destacar as imagens */
+    padding: 40px 0; /* Aumenta o padding para dar mais espaço ao redor da galeria */
+}
+
+.fullscreen-gallery {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0, 100%, 31%);
+    padding-bottom: 60px;
+    background-image: url('./img/fundo1.png');
+    background-size: cover; /* Faz a imagem cobrir toda a área visível */
+    background-position: center; /* Centraliza a imagem */
+    background-size: 900px 562px; /* Define a largura e altura em pixels */
+    display: none; /* Começa oculto */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.fullscreen-gallery.active {
+    display: flex; /* Mostra o modal quando a classe active é adicionada */
+}
+
+/* Adicione esses estilos ao seu arquivo style.css */
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.gallery-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Garante que o conteúdo ocupe a altura total */
+}
+
+.gallery-content img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001; /* Coloca o botão acima do conteúdo */
+}
+
+.container3 {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Layout responsivo com colunas ajustáveis */
+    gap: 15px; /* Espaço entre as imagens */
+}
+
+.gallery-grid .image-container {
+    position: relative; /* Necessário para efeitos de sobreposição */
+    overflow: hidden;
+    border-radius: 10px; /* Bordas arredondadas para os contêineres de imagem */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para efeitos de hover */
+}
+
+.gallery-grid .image-container:hover {
+    transform: scale(1.05); /* Zoom suave ao passar o mouse sobre a imagem */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais forte ao passar o mouse */
+}
+
+.gallery-grid img {
+    width: 100%; /* Faz com que a imagem ocupe 100% da largura do contêiner */
+    height: 200px; /* Define uma altura fixa para todas as imagens */
+    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner mantendo a proporção */
+    border-radius: 10px; /* Arredonda as bordas da imagem para combinar com o contêiner */
+    transition: opacity 0.3s ease; /* Transição suave para efeitos de hover */
+}
+
+.gallery-grid .image-container:hover img {
+    opacity: 0.8; /* Diminui a opacidade da imagem ao passar o mouse sobre o contêiner */
+}
+
+.container4 {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.container5 {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.container6 {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background: #fff; /* Fundo branco para destacar o conteúdo */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilo do título */
+.container6 h2 {
+    font-size: 2em; /* Aumenta o tamanho do título */
+    color: #333; /* Cor escura para melhor contraste */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    text-align: center; /* Alinha o título ao centro */
+}
+
+/* Layout e estilo do conteúdo "Sobre Nós" */
+.about-content {
+    display: flex;
+    align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+    gap: 20px; /* Espaço entre a imagem e o texto */
+}
+
+/* Estilo da imagem */
+.about-image {
+    width: 100%; /* Ajusta a largura da imagem */
+    max-width: 400px; /* Define uma largura máxima */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao redor da imagem */
+}
+
+/* Estilo do texto */
+.about-text {
+    font-size: 1.2em; /* Tamanho de fonte aumentado para legibilidade */
+    color: #555; /* Cor do texto */
+    line-height: 1.6; /* Altura da linha para melhor leitura */
+    text-align: justify; /* Justifica o texto */
+}
+
+/* Adiciona uma borda ao redor do texto para criar um destaque */
+.about-text p {
+    border-left: 4px solid #007506; /* Borda verde à esquerda do texto */
+    padding-left: 20px; /* Espaçamento interno à esquerda */
+    margin-left: 0; /* Remove margem padrão */
+}
+
+/* Formulário de Reserva */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+form button {
+    background: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+form button:hover {
+    background: #007506;
+}
+
+.reservation-container {
+    max-width: 800px; /* Mantém o mesmo tamanho máximo */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px; /* Adiciona um pouco de padding */
+    background-color: #ffffff; /* Fundo branco para a caixa de contato */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para profundidade */
+}
+
+/* Estiliza o título da seção */
+.reservation-container h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o título */
+}
+
+/* Estiliza o formulário de contato */
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reservation-form label {
+    font-size: 16px;
+    color: #555;
+}
+
+.reservation-form input, .reservation-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.reservation-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.reservation-form button {
+    background-color: #333333; /* Cor de fundo do botão */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Adiciona efeito ao passar o mouse sobre o botão */
+.reservation-form button:hover {
+    background-color: #007506;
+}
+
+.contact-container {
+    max-width: 800px; /* Tamanho máximo do container */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px; /* Adiciona padding interno */
+    background-color: #ffffff; /* Fundo branco para a área de contato */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para profundidade */
+}
+
+.contact-container h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o título */
+}
+
+/* Estiliza as informações de contato */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.icon {
+    width: 40px; /* Ajusta o tamanho do ícone */
+    height: 40px; /* Mantém a proporção do ícone */
+    border-radius: 50%; /* Adiciona bordas arredondadas */
+    border: 2px solid black; /* Adiciona uma borda ao redor do ícone */
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #e74c3c; /* Cor do ícone */
+}
+
+.contact-item p {
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-item a {
+    color: #e74c3c; /* Cor dos links */
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+footer {
+    background-color: #007506; /* Cor de fundo escura para contraste */
+    color: #fff; /* Texto branco para melhor legibilidade */
+    padding: 20px 0; /* Espaçamento interno */
+    text-align: center; /* Centralizar o texto */
+    position: relative; /* Posicionar o footer corretamente na página */
+    bottom: 0; /* Manter o footer no final da página */
+    width: 100%; /* Ocupa toda a largura da página */
+}
+
+footer p {
+    margin: 0; /* Remover margem padrão */
+    font-size: 14px; /* Tamanho da fonte */
+    line-height: 1.5; /* Altura da linha para melhor leitura */
+}
